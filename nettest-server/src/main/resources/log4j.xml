@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN"
+    "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">  
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">  
+  
+    <appender name="ASYNC" class="org.apache.log4j.AsyncAppender">  
+        <appender-ref ref="CONSOLE"/>
+        <!--appender-ref ref="FILE"/-->
+    </appender>  
+          
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">  
+        <layout class="org.apache.log4j.PatternLayout">  
+             <param name="ConversionPattern" value="%-d: %-5p [%8c] - %m%n"/>  
+        </layout>  
+    </appender>  
+  
+    <appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="logs/webservice.log"/>
+        <param name="MaxFileSize" value="10000KB"/>
+        <param name="MaxBackupIndex" value="5"/>
+        <layout class="org.apache.log4j.PatternLayout">  
+             <param name="ConversionPattern" value="%-d: %-5p [%8c] - %m%n"/>  
+        </layout>  
+    </appender>
+    
+    <root>  
+        <priority value="INFO" />  
+        <appender-ref ref="ASYNC"/>  
+    </root>  
+  
+</log4j:configuration>
