@@ -9,4 +9,6 @@ angular.module('demo', [])
 
 	$scope.contacts = [{name: 'Georgios', surname: 'Stathis'},
 	                   {name: 'Nadia', surname: 'Bianco'}];
+	
+	
 }]);
